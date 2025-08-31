@@ -21,4 +21,16 @@ public class PlayerController : MonoBehaviour
             attackComponent.Attack();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        IWeapon weapon = other.gameObject.GetComponent<IWeapon>();
+        
+        if (weapon == null)
+        {
+            return;
+        }
+
+        attackComponent.ChangeWeapon(weapon);
+    }
 }

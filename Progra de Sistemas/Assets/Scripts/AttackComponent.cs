@@ -16,6 +16,11 @@ public class AttackComponent : MonoBehaviour
 
     public void ChangeWeapon(IWeapon newWeapon)
     {
-        weapon = newWeapon;
+        if (newWeapon != weapon)
+        {
+            weapon = newWeapon;
+            Debug.Log("Changed weapon");
+        }
+        
     }
 }
