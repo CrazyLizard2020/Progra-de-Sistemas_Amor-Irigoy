@@ -5,6 +5,7 @@ using UnityEngine;
 public class BasicStateEnemy : MonoBehaviour
 {
     private bool detected = false;
+    [SerializeField] private string id;
 
     private States currentState = States.Patrolling;
 
@@ -24,6 +25,7 @@ public class BasicStateEnemy : MonoBehaviour
     }
 
     public bool Detected => detected;
+    public string ID => id;
 
     public enum States
     {

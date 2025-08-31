@@ -19,8 +19,7 @@ public class AttackComponent : MonoBehaviour
         if (newWeapon != weapon)
         {
             weapon = newWeapon;
-            Debug.Log("Changed weapon");
+            Debug.Log("Changed weapon to " + weapon.Name);
         }
-        
     }
 }
