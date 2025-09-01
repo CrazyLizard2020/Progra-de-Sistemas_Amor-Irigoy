@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     static private ScoreManager instance;
     [SerializeField] private int currentScore = 0;
-    [SerializeField] private int nextLvlScore;
+    [SerializeField] private int nextLvlScore = 5;
 
     public static ScoreManager Instance => instance;
 
@@ -41,9 +41,9 @@ public class ScoreManager : MonoBehaviour
 
         if (currentScore % nextLvlScore == 0)
         {
-            string nextSceneName = SceneManager.GetSceneByBuildIndex(currentSceneIndex + 1).name;
             Debug.Log("Cambio de escena");
-            SceneManager.LoadScene(nextSceneName);
+            int nextSceneIndex = currentSceneIndex + 1;
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 
