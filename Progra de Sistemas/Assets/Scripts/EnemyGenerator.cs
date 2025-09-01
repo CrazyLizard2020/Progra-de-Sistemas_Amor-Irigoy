@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
         if (currentTime >= enemySpawnTime)
         {
             BasicStateEnemy[] enemiesRef = enemyFactoryRef.Enemies;
-            rndID = enemiesRef[Random.Range(0, enemiesRef.Length - 1)].ID;
+            rndID = enemiesRef[Random.Range(0, enemiesRef.Length)].ID;
 
             BasicStateEnemy newEnemy = enemyFactoryRef.CreateEnemy(rndID);
 
