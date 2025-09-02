@@ -22,4 +22,9 @@ public class AttackingState : IState
         }
     }
 
+    public void UpdateState()
+    {
+
+    }
+
 }

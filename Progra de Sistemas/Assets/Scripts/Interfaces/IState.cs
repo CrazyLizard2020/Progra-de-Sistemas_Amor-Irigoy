@@ -6,5 +6,5 @@ public interface IState
 {
     void Enter();
     void Exit();
-    void UpdateState(BasicStateEnemy character);
+    void UpdateState();
 }

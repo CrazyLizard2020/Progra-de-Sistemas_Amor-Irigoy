@@ -7,10 +7,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private AttackComponent attackComponent;
 
+    [SerializeField] private StateMachine machine;
+
     public AttackComponent AttackComponent => attackComponent;
+
+    private void Start()
+    {
+        machine.Initialize();
+    }
 
     void Update()
     {
+        machine.UpdateState();
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 

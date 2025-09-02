@@ -21,4 +21,6 @@ public class PatrollingState : IState
             character.ChangeState(BasicStateEnemy.States.Attacking);
         }
     }
+
+    public void UpdateState() { }
 }
