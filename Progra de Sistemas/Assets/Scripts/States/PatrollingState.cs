@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class PatrollingState : IState
 {
+    PlayerController player;
+    private StateMachine machine;
+    private States stateType = States.Idle;
+    string stateName = "Idle";
+
+    public StateMachine Machine
+    {
+        get { return machine; }
+        set { machine = value; }
+    }
+    public States StateType => stateType;
+    public string StateName => stateName;
+
     public void Enter()
     {
         Debug.Log("Entrando a Patrolling");

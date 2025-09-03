@@ -2,28 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum States
+{
+    Idle,
+    Run,
+    Walk
+}
+
 public class StateMachine : MonoBehaviour
 {
     IState currentState;
+    [SerializeField] private string currentStateName;
+    PlayerController player;
 
-    [SerializeField] private List<IState> states = new List<IState>();
+    Dictionary<States, IState> statesDict = new Dictionary<States, IState>();
 
-    Dictionary<States, IState> statesDict;
+    public PlayerController Player => player;
 
-    public enum States
+    public void Initialize(PlayerController player)
     {
-        Idle,
-        Run,
-        Walk
-    }
+        this.player = player;
 
-    public void Initialize()
-    {
+        IState[] statesInChildren = GetComponentsInChildren<IState>();
+
+        foreach (IState state in statesInChildren) 
+        {
+            state.Machine = this;
+            statesDict.Add(state.StateType, state);
+        }
+
+
         if (statesDict[States.Idle] != null)
         {
             currentState = statesDict[States.Idle];
             currentState.Enter();
-        } else
+        }
+        else
         {
             Debug.Log("No Idle state");
         }
@@ -32,12 +46,13 @@ public class StateMachine : MonoBehaviour
     public void UpdateState()
     {
         currentState.UpdateState();
+        currentStateName = currentState.StateName;
     }
 
-    public void ChangeState(IState state)
+    public void ChangeState(States newState)
     {
         currentState.Exit();
-        currentState = state;
+        currentState = statesDict[newState];
         currentState.Enter();
     }
 }
