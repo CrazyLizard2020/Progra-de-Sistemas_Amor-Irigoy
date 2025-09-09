@@ -41,7 +41,7 @@ public class BasicStateEnemy : MonoBehaviour
 
     private void Update()
     {
-        stateDict[currentState].UpdateState(this);
+        stateDict[currentState].UpdateState();
 
         //switch (currentStateType)
         //{
