@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d08c37cfd434a64db35e3cd24203ab0, type: 3}
-  m_Name: PruebaData
+  m_Name: Fairy
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  z: 0
+  damage: 0
+  speed: 0
+  maxHealth: 0
+  currentHealth: 0
   name: 
+  drop: {fileID: 0}
