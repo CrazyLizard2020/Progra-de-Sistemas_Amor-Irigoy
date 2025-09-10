@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Basicamente una AbstractFactory
+
 public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] private EnemyFactory enemyFactoryRef;

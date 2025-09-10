@@ -27,4 +27,13 @@ public class EnemyFactory : MonoBehaviour
         }
         return Instantiate(enemy);
     }
+
+    public BasicStateEnemy CreateEnemy(string id, Vector3 position)
+    {
+        if (!enemiesDict.TryGetValue(id, out BasicStateEnemy enemy))
+        {
+            return null;
+        }
+        return Instantiate(enemy, position, Quaternion.identity);
+    }
 }
