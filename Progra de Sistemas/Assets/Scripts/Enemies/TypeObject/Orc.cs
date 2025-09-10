@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Orc", menuName = "Flyweight/Orc", order = 1)]
 public class Orc : EnemyType
 {
     public override void Attack()

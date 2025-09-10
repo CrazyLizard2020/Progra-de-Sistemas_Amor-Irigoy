@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyType", menuName = "Flyweight/EnemyType", order = 1)]
-
-public class EnemyType : ScriptableObject
+public abstract class EnemyType : ScriptableObject
 {
     public int damage;
     public int speed;
